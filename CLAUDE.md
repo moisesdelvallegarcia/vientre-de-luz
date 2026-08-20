@@ -10,7 +10,6 @@ index.html    → portada (los 6 pasos del diseño original)
 recetas.html  → recetas integrales
 acerca.html   → acerca de y aviso de privacidad
 styles.css    → hoja de estilo compartida por las tres páginas
-CNAME         → vientredeluz.com (GitHub Pages)
 ```
 
 El diseño replica el PDF de Canva original: bandas alternadas crema/verde bosque,
@@ -20,7 +19,13 @@ de seis pasos se conservó tal cual; lo que cambió es el contenido de los pasos
 Las fotos y videos aún no están: en su lugar hay bloques `.marco` con una etiqueta que
 dice qué va ahí. Sustituir por `<img>` o `<iframe>` conforme lleguen los materiales.
 
-Se despliega con GitHub Pages desde `main` / root. Un `git push` publica.
+Se despliega con GitHub Pages desde `main` / root en
+**https://moisesdelvallegarcia.github.io/vientre-de-luz/**. Un `git push` publica.
+
+**No agregues un archivo `CNAME` todavía.** `vientredeluz.com` está registrado en GoDaddy
+pero su DNS apunta a otro servidor; con el `CNAME` presente, Pages redirige la URL de
+github.io al dominio y el sitio deja de cargar. Primero el DNS (`docs/setup-tecnico.md`),
+después el `CNAME`.
 
 ## Reglas de contenido — NO NEGOCIABLES
 

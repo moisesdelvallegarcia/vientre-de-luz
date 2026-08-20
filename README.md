@@ -4,7 +4,7 @@ Sitio de la ONG **Vientre de Luz** — concientización y acompañamiento a fami
 
 ## Estructura
 
-Sitio estático de un solo archivo. Sin build, sin dependencias.
+Sitio estático de tres páginas con hoja de estilo compartida. Sin build, sin dependencias.
 
 ```
 CLAUDE.md                     → contexto que Claude Code carga solo
@@ -12,7 +12,6 @@ index.html                    → portada (6 pasos)
 recetas.html                  → recetas integrales
 acerca.html                   → acerca de y aviso de privacidad
 styles.css                    → estilos compartidos
-CNAME                         → dominio personalizado para GitHub Pages
 docs/marca.md                 → sistema de marca (colores, tipografías, logo)
 docs/criterios-de-contenido.md→ qué se publica y qué no, y por qué
 docs/setup-tecnico.md         → PowerShell, GitHub y DNS de GoDaddy
@@ -32,8 +31,20 @@ npx serve .
 
 ## Publicar
 
-Cada `git push` a `main` actualiza el sitio si GitHub Pages está activo
+Publicado en **https://moisesdelvallegarcia.github.io/vientre-de-luz/**
+
+Cada `git push` a `main` actualiza el sitio. GitHub Pages ya está activo
 (Settings → Pages → Deploy from a branch → `main` / root).
+
+### Sobre el dominio propio
+
+**No hay archivo `CNAME` en el repo, a propósito.** `vientredeluz.com` está registrado
+en GoDaddy pero su DNS todavía apunta a otro servidor. Con un `CNAME` presente, Pages
+redirige la URL de github.io al dominio y el sitio deja de cargar.
+
+El orden correcto es: primero los registros DNS en GoDaddy (4 registros `A` + `CNAME www`,
+los valores están en `docs/setup-tecnico.md`), y hasta que resuelvan, crear el `CNAME`
+con una sola línea, `vientredeluz.com`.
 
 ## Pendientes antes de salir a producción
 
