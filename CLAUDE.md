@@ -81,7 +81,7 @@ Nunca "niño con autismo" como tragedia; nunca prometer resultados.
 
 - [ ] Sustituir el sello `✦` del header por el logo real en SVG
 - [ ] `favicon.ico` + `apple-touch-icon.png`
-- [ ] Conectar el formulario: crear cuenta en Formspree y reemplazar `TU-ID-AQUI`
+- [ ] Conectar el formulario a Formspree (hoy es respaldo `mailto:`; ver README)
 - [ ] Confirmar los enlaces de Instagram y Facebook
 - [ ] Fotografías propias (con permiso firmado de las familias)
 - [ ] Revisar anualmente los datos de "Dónde acudir" (verificados en agosto de 2026)

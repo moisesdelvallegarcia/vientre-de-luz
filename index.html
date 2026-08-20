@@ -613,7 +613,10 @@ p{margin:0 0 1.1em;max-width:68ch}
           </ul>
         </div>
 
-        <form action="https://formspree.io/f/TU-ID-AQUI" method="POST">
+        <!-- Provisional: sin servidor, el formulario abre la app de correo de quien escribe.
+             Para conectar Formspree: cambia el action por https://formspree.io/f/TU-ID
+             y borra el bloque "Contacto por correo" del <script> al final. -->
+        <form id="form-contacto" action="mailto:vientredeluzmx@gmail.com" method="post" enctype="text/plain">
           <label class="campo">
             <span>Tu nombre</span>
             <input type="text" name="nombre" autocomplete="name" required>
@@ -638,7 +641,8 @@ p{margin:0 0 1.1em;max-width:68ch}
             <textarea name="mensaje" required></textarea>
           </label>
           <button class="boton boton--claro" type="submit">Enviar mensaje</button>
-          <p class="form-nota">No compartimos tus datos con nadie. No damos diagnósticos ni indicaciones médicas por este medio.</p>
+          <p class="form-nota">Al enviar se abre tu aplicación de correo con el mensaje ya escrito, para que lo revises antes de mandarlo. No compartimos tus datos con nadie. No damos diagnósticos ni indicaciones médicas por este medio.</p>
+          <p class="form-nota" id="form-aviso" role="status" hidden>Abrimos tu aplicación de correo. Si no se abrió, escríbenos directamente a <a href="mailto:vientredeluzmx@gmail.com">vientredeluzmx@gmail.com</a>.</p>
         </form>
       </div>
     </div>
@@ -699,6 +703,25 @@ p{margin:0 0 1.1em;max-width:68ch}
   });
   window.addEventListener('resize', sincronizar);
   sincronizar();
+
+  // Contacto por correo — provisional, hasta que el formulario se conecte a Formspree.
+  // Arma un mensaje legible y lo abre en la app de correo de quien escribe.
+  var formulario = document.getElementById('form-contacto');
+  var avisoForm = document.getElementById('form-aviso');
+  if (formulario && formulario.action.indexOf('mailto:') === 0) {
+    formulario.addEventListener('submit', function(e){
+      e.preventDefault();
+      var datos = new FormData(formulario);
+      var cuerpo = 'Nombre: ' + datos.get('nombre') + '\n'
+                 + 'Correo: ' + datos.get('email') + '\n'
+                 + 'Tema: ' + datos.get('tema') + '\n\n'
+                 + datos.get('mensaje') + '\n';
+      window.location.href = 'mailto:vientredeluzmx@gmail.com'
+        + '?subject=' + encodeURIComponent('Contacto desde el sitio — ' + datos.get('tema'))
+        + '&body=' + encodeURIComponent(cuerpo);
+      avisoForm.hidden = false;
+    });
+  }
 </script>
 
 </body>
