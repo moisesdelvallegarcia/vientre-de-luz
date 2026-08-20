@@ -9,7 +9,6 @@ Sitio estático de un solo archivo. Sin build, sin dependencias.
 ```
 CLAUDE.md                     → contexto que Claude Code carga solo
 index.html                    → todo el sitio (HTML + CSS + JS inline)
-CNAME                         → dominio personalizado para GitHub Pages
 docs/marca.md                 → sistema de marca (colores, tipografías, logo)
 docs/criterios-de-contenido.md→ qué se publica y qué no, y por qué
 docs/setup-tecnico.md         → PowerShell, GitHub y DNS de GoDaddy

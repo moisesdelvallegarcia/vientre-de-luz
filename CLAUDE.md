@@ -7,8 +7,8 @@ familias que viven con autismo. Sitio estático, sin build, sin dependencias.
 
 ```
 index.html    → todo el sitio (HTML + CSS + JS inline). Fuente única de verdad.
-CNAME         → vientredeluz.com (GitHub Pages)
 README.md     → pendientes y criterios
+docs/         → marca, criterios de contenido y setup técnico
 ```
 
 Se despliega con GitHub Pages desde `main` / root. Un `git push` publica.
