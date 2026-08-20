@@ -100,7 +100,13 @@ p{margin:0 0 1.1em;max-width:68ch}
 }
 .marca__texto{display:flex;flex-direction:column;line-height:1.1}
 .marca__nombre{font-family:var(--display);font-size:1.4rem;font-weight:600}
-.marca__sub{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--tierra-oscura);font-weight:600}
+.marca__lema{font-family:var(--display);font-style:italic;font-size:.88rem;color:var(--tierra-oscura);line-height:1.25;margin-top:.1rem}
+/* En pantallas angostas el lema no cabe junto al menú: se cambia por "Autismo". */
+.marca__sub{display:none;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--tierra-oscura);font-weight:600}
+@media (max-width:600px){
+  .marca__lema{display:none}
+  .marca__sub{display:block}
+}
 
 .nav-principal ul{display:flex;gap:1.9rem;list-style:none;margin:0;padding:0}
 .nav-principal a{
@@ -149,6 +155,7 @@ p{margin:0 0 1.1em;max-width:68ch}
 }
 .hero__contenido{max-width:44ch}
 .hero h1{color:var(--verde-bosque);margin-bottom:.35em}
+/* Sin uso hoy: el lema pasó al encabezado. Se conserva por si vuelve al hero. */
 .hero__lema{
   font-family:var(--display);font-style:italic;font-size:clamp(1.3rem,2.6vw,1.7rem);
   color:var(--tierra-oscura);margin-bottom:1.6rem;line-height:1.45;
@@ -287,6 +294,7 @@ p{margin:0 0 1.1em;max-width:68ch}
       <span class="marca__sello" aria-hidden="true">✦</span>
       <span class="marca__texto">
         <span class="marca__nombre">Vientre de Luz</span>
+        <span class="marca__lema">El llamado de la tierra a volver a ella</span>
         <span class="marca__sub">Autismo</span>
       </span>
     </a>
@@ -316,7 +324,6 @@ p{margin:0 0 1.1em;max-width:68ch}
     <div class="hero__contenido">
       <hr class="hero__regla">
       <h1>No caminas sola</h1>
-      <p class="hero__lema">El llamado de la tierra a volver a ella.</p>
       <p>Somos una comunidad de familias que viven con el autismo. Aquí encuentras información clara, rutas reales de atención en México y personas que ya recorrieron este camino.</p>
       <div class="botones">
         <a class="boton boton--principal" href="#empezar">Acabo de recibir un diagnóstico</a>
