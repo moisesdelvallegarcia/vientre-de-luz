@@ -8,7 +8,11 @@ Sitio estático de un solo archivo. Sin build, sin dependencias.
 
 ```
 CLAUDE.md                     → contexto que Claude Code carga solo
-index.html                    → todo el sitio (HTML + CSS + JS inline)
+index.html                    → portada (6 pasos)
+recetas.html                  → recetas integrales
+acerca.html                   → acerca de y aviso de privacidad
+styles.css                    → estilos compartidos
+CNAME                         → dominio personalizado para GitHub Pages
 docs/marca.md                 → sistema de marca (colores, tipografías, logo)
 docs/criterios-de-contenido.md→ qué se publica y qué no, y por qué
 docs/setup-tecnico.md         → PowerShell, GitHub y DNS de GoDaddy
@@ -35,11 +39,8 @@ Cada `git push` a `main` actualiza el sitio si GitHub Pages está activo
 
 - [ ] Sustituir el sello `✦` del encabezado por el logo real en SVG
 - [ ] Agregar `favicon.ico` y `apple-touch-icon.png`
-- [ ] Conectar el formulario a un servicio real. Hoy funciona como respaldo: al
-      enviarlo abre la app de correo de quien escribe, con los campos ya armados.
-      Para conectarlo, crear cuenta en [Formspree](https://formspree.io) con el
-      correo de la ONG, poner el `action` del `<form>` en `https://formspree.io/f/TU-ID`
-      y borrar el bloque "Contacto por correo" del `<script>` final
+- [ ] Conectar el formulario: crear cuenta en [Formspree](https://formspree.io)
+      y reemplazar `TU-ID-AQUI` en el `action` del `<form>`
 - [ ] Confirmar los enlaces de Instagram y Facebook
 - [ ] Revisar anualmente los datos de "Dónde acudir" (verificados en agosto de 2026)
 - [ ] Agregar fotografías propias (con permiso firmado de las familias)

@@ -1,740 +1,518 @@
 <!DOCTYPE html>
 <html lang="es-MX">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vientre de Luz — Acompañamiento para familias con autismo</title>
-<meta name="description" content="Organización dedicada a la concientización y el acompañamiento de familias que viven con autismo en México. Información clara, rutas de atención y comunidad.">
-<meta property="og:title" content="Vientre de Luz — Acompañamiento para familias con autismo">
-<meta property="og:description" content="Información clara, rutas de atención y comunidad para familias que viven con autismo en México.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vientre de Luz — Autismo, acompañamiento y comunidad</title>
+<meta name="description" content="Organización sin fines de lucro dedicada a la concientización, el acompañamiento y la difusión de información sobre el autismo, desde una visión humana y natural.">
+<meta name="theme-color" content="#2F4F3E">
+
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Vientre de Luz">
+<meta property="og:title" content="Vientre de Luz — Autismo, acompañamiento y comunidad">
+<meta property="og:description" content="El llamado de la tierra a volver a ella. Información, acompañamiento y comunidad para familias que viven con el autismo.">
+<meta property="og:url" content="https://vientredeluz.com/">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --verde-bosque:#2F4F3E;
-  --verde-profundo:#243D30;
-  --verde-salvia:#8FAE9A;
-  --salvia-clara:#AECBB9;
-  --azul-tierra:#6C8FAA;
-  --azul-oscuro:#4A6B85;
-  --arena-clara:#F2E9DB;
-  --tierra-suave:#A68A6A;
-  --tierra-oscura:#7D6449;
-  --blanco-natural:#FAFAF8;
-  --texto:#243D30;
-  --texto-suave:#4F6257;
-  --borde:#E2DDD2;
-  --display:'Cormorant Garamond',Georgia,serif;
-  --texto-fuente:'Montserrat',system-ui,-apple-system,sans-serif;
-  --radio:14px;
-  --ancho:1120px;
-}
-
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
-}
-body{
-  margin:0;
-  font-family:var(--texto-fuente);
-  font-size:1.0625rem;
-  line-height:1.75;
-  color:var(--texto);
-  background:var(--blanco-natural);
-}
-img{max-width:100%;height:auto;display:block}
-a{color:var(--azul-oscuro)}
-a:hover{color:var(--verde-bosque)}
-:focus-visible{outline:3px solid var(--azul-tierra);outline-offset:3px;border-radius:4px}
-
-h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.2;letter-spacing:.01em;margin:0 0 .5em}
-h1{font-size:clamp(2.6rem,6vw,4.2rem);font-weight:500}
-h2{font-size:clamp(2rem,4vw,2.9rem);font-weight:500}
-h3{font-family:var(--texto-fuente);font-size:1.0625rem;font-weight:600;letter-spacing:.02em;line-height:1.4}
-p{margin:0 0 1.1em;max-width:68ch}
-
-.contenedor{width:100%;max-width:var(--ancho);margin-inline:auto;padding-inline:clamp(1.25rem,5vw,2.5rem)}
-.seccion{padding-block:clamp(3.5rem,9vw,6.5rem)}
-.seccion--arena{background:var(--arena-clara)}
-.seccion--bosque{background:var(--verde-bosque);color:#EFF3EF}
-.seccion--bosque h2,.seccion--bosque h3{color:#fff}
-.seccion--bosque p{color:#D8E2DA}
-
-.etiqueta{
-  font-size:.75rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--tierra-oscura);margin:0 0 .9rem;display:block;
-}
-.seccion--bosque .etiqueta{color:var(--salvia-clara)}
-.entrada{max-width:60ch;margin-bottom:2.75rem}
-.entrada p{font-size:1.125rem;color:var(--texto-suave)}
-.seccion--bosque .entrada p{color:#CBD8CE}
-
-/* ---------- Saltar al contenido ---------- */
-.saltar{
-  position:absolute;left:-9999px;top:0;z-index:200;
-  background:var(--verde-bosque);color:#fff;padding:.9rem 1.4rem;
-  border-radius:0 0 var(--radio) 0;font-weight:600;text-decoration:none;
-}
-.saltar:focus{left:0}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-
-/* ---------- Encabezado ---------- */
-.sitio-header{
-  position:sticky;top:0;z-index:100;
-  background:rgba(250,250,248,.94);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--borde);
-}
-.header-fila{position:relative;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;min-height:74px}
-.marca{display:flex;align-items:center;gap:.8rem;text-decoration:none;color:var(--verde-bosque)}
-.marca__sello{
-  width:44px;height:44px;border-radius:50%;flex-shrink:0;
-  background:var(--verde-bosque);color:var(--arena-clara);
-  display:grid;place-items:center;font-family:var(--display);font-size:1.3rem;
-  border:2px solid var(--verde-bosque);box-shadow:inset 0 0 0 2px var(--blanco-natural);
-}
-.marca__texto{display:flex;flex-direction:column;line-height:1.1}
-.marca__nombre{font-family:var(--display);font-size:1.4rem;font-weight:600}
-.marca__lema{
-  display:none;white-space:nowrap;
-  font-family:var(--display);font-style:italic;font-size:.88rem;
-  color:var(--tierra-oscura);line-height:1.25;margin-top:.1rem;
-}
-.marca__sub{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--tierra-oscura);font-weight:600}
-/* El lema completo solo aparece cuando cabe en un renglón sin apretar el menú.
-   Abajo de 1180px vuelve el "AUTISMO" corto. */
-@media (min-width:1180px){
-  .marca__lema{display:block}
-  .marca__sub{display:none}
-}
-
-.nav-principal ul{display:flex;gap:1.9rem;list-style:none;margin:0;padding:0}
-.nav-principal a{
-  text-decoration:none;color:var(--verde-bosque);font-size:.875rem;font-weight:500;
-  padding:.4rem 0;border-bottom:2px solid transparent;transition:border-color .2s;
-  white-space:nowrap;
-}
-.nav-principal a:hover,.nav-principal a:focus-visible{border-bottom-color:var(--verde-salvia)}
-.menu-btn{display:none;background:none;border:0;padding:.5rem;cursor:pointer;color:var(--verde-bosque)}
-.menu-btn svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
-@media (max-width:900px){
-  .menu-btn{display:block}
-  .header-fila > .boton{display:none}
-  .nav-principal{
-    position:absolute;left:0;right:0;top:100%;
-    background:var(--blanco-natural);border-bottom:1px solid var(--borde);
-    padding:.5rem clamp(1.25rem,5vw,2.5rem) 1.5rem;
-  }
-  .nav-principal[hidden]{display:none}
-  .nav-principal ul{flex-direction:column;gap:0}
-  .nav-principal a{display:block;padding:.85rem 0;border-bottom:1px solid var(--borde);font-size:1rem}
-  .nav-principal li:last-child a{border-bottom:0}
-}
-
-/* ---------- Botones ---------- */
-.boton{
-  display:inline-block;font-family:var(--texto-fuente);font-size:.9rem;font-weight:600;
-  letter-spacing:.04em;text-decoration:none;padding:.95rem 2rem;border-radius:100px;
-  border:2px solid transparent;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s;
-}
-.boton--principal{background:var(--verde-bosque);color:var(--blanco-natural);border-color:var(--verde-bosque)}
-.boton--principal:hover{background:var(--verde-profundo);color:#fff}
-.boton--linea{background:transparent;color:var(--verde-bosque);border-color:var(--verde-bosque)}
-.boton--linea:hover{background:var(--verde-bosque);color:var(--blanco-natural)}
-.boton--claro{background:var(--arena-clara);color:var(--verde-bosque);border-color:var(--arena-clara)}
-.boton--claro:hover{background:#fff;color:var(--verde-profundo)}
-.botones{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem}
-
-/* ---------- Hero ---------- */
-.hero{
-  background:
-    radial-gradient(120% 90% at 82% 12%, rgba(143,174,154,.30) 0%, rgba(143,174,154,0) 58%),
-    radial-gradient(100% 80% at 8% 92%, rgba(242,233,219,.85) 0%, rgba(242,233,219,0) 62%),
-    var(--blanco-natural);
-  padding-block:clamp(4rem,11vw,8rem);
-  border-bottom:1px solid var(--borde);
-}
-.hero__contenido{max-width:44ch}
-.hero h1{color:var(--verde-bosque);margin-bottom:.35em}
-/* Sin uso hoy: el lema pasó al encabezado. Se conserva por si vuelve al hero. */
-.hero__lema{
-  font-family:var(--display);font-style:italic;font-size:clamp(1.3rem,2.6vw,1.7rem);
-  color:var(--tierra-oscura);margin-bottom:1.6rem;line-height:1.45;
-}
-.hero p{font-size:1.15rem;color:var(--texto-suave)}
-.hero__regla{width:64px;height:2px;background:var(--tierra-suave);border:0;margin:0 0 1.6rem}
-
-/* ---------- Primeros pasos ---------- */
-.pasos{list-style:none;margin:0;padding:0;display:grid;gap:1.25rem}
-@media (min-width:720px){.pasos{grid-template-columns:repeat(2,1fr)}}
-.paso{
-  background:var(--blanco-natural);border:1px solid var(--borde);border-radius:var(--radio);
-  padding:1.9rem;display:flex;gap:1.25rem;align-items:flex-start;
-}
-.paso__num{
-  flex-shrink:0;width:38px;height:38px;border-radius:50%;
-  background:var(--verde-bosque);color:var(--arena-clara);
-  display:grid;place-items:center;font-family:var(--display);font-size:1.25rem;font-weight:600;
-}
-.paso h3{margin-bottom:.35rem;color:var(--verde-bosque)}
-.paso p{font-size:.95rem;color:var(--texto-suave);margin:0}
-
-/* ---------- Tarjetas ---------- */
-.rejilla{display:grid;gap:1.25rem}
-@media (min-width:760px){.rejilla--3{grid-template-columns:repeat(3,1fr)}.rejilla--2{grid-template-columns:repeat(2,1fr)}}
-.tarjeta{
-  background:var(--blanco-natural);border:1px solid var(--borde);border-radius:var(--radio);
-  padding:1.9rem;
-}
-.seccion--arena .tarjeta{background:#fff;border-color:#E6DECF}
-.tarjeta h3{color:var(--verde-bosque);margin-bottom:.5rem}
-.seccion--bosque .tarjeta{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.18)}
-.seccion--bosque .tarjeta h3{color:#fff}
-.seccion--bosque .tarjeta p{color:#CBD8CE}
-.tarjeta p{font-size:.95rem;color:var(--texto-suave);margin-bottom:.7rem}
-.tarjeta p:last-child{margin-bottom:0}
-.tarjeta__icono{
-  width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
-  margin-bottom:1.1rem;background:var(--arena-clara);
-}
-.seccion--arena .tarjeta__icono{background:var(--arena-clara)}
-.tarjeta__icono svg{width:22px;height:22px;stroke:var(--verde-bosque);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-
-/* ---------- Rutas de atención ---------- */
-.ruta{
-  border-top:1px solid var(--borde);padding-block:1.9rem;
-  display:grid;gap:.5rem 2.5rem;
-}
-@media (min-width:820px){.ruta{grid-template-columns:15rem 1fr}}
-.ruta:last-child{border-bottom:1px solid var(--borde)}
-.ruta h3{color:var(--verde-bosque);font-size:1.05rem;margin:0}
-.ruta__quien{font-size:.8rem;color:var(--tierra-oscura);font-weight:600;letter-spacing:.04em;margin-top:.25rem}
-.ruta p{margin:0 0 .6rem;font-size:.97rem;color:var(--texto-suave)}
-.ruta p:last-child{margin-bottom:0}
-.ruta__dato{font-size:.88rem;color:var(--verde-bosque);font-weight:500}
-
-/* ---------- Cita ---------- */
-.cita{
-  font-family:var(--display);font-size:clamp(1.5rem,3.4vw,2.15rem);font-style:italic;
-  line-height:1.45;max-width:24ch;margin:0;color:#fff;
-}
-.cita__pie{
-  font-family:var(--texto-fuente);font-style:normal;font-size:.8rem;font-weight:600;
-  letter-spacing:.16em;text-transform:uppercase;color:var(--salvia-clara);
-  display:block;margin-top:1.5rem;
-}
-
-/* ---------- Aviso / precaución ---------- */
-.aviso{
-  border-left:4px solid var(--tierra-suave);
-  background:var(--arena-clara);
-  border-radius:0 var(--radio) var(--radio) 0;
-  padding:1.75rem 1.9rem;
-}
-.aviso h3{color:var(--verde-bosque);margin-bottom:.5rem}
-.aviso p{font-size:.97rem;color:var(--texto-suave);margin-bottom:.8rem}
-.aviso p:last-child{margin-bottom:0}
-.aviso ul{margin:0 0 .8rem;padding-left:1.2rem;font-size:.97rem;color:var(--texto-suave)}
-.aviso li{margin-bottom:.4rem}
-
-/* ---------- Mitos ---------- */
-.mito{border-top:1px solid var(--borde);padding-block:1.6rem}
-.mito:last-of-type{border-bottom:1px solid var(--borde)}
-.mito__falso,.mito__real{display:flex;gap:.85rem;align-items:baseline}
-.mito__falso{margin-bottom:.55rem}
-.mito__tag{
-  flex-shrink:0;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
-  padding:.2rem .6rem;border-radius:100px;min-width:5.4rem;text-align:center;
-}
-.mito__tag--f{background:#F0E0D8;color:#8A4A32}
-.mito__tag--v{background:var(--verde-bosque);color:var(--arena-clara)}
-.mito__falso p,.mito__real p{margin:0;font-size:.98rem}
-.mito__falso p{color:var(--texto-suave)}
-.mito__real p{color:var(--texto)}
-
-/* ---------- Contacto ---------- */
-.contacto-caja{
-  background:var(--verde-bosque);color:#EFF3EF;border-radius:var(--radio);
-  padding:clamp(2.25rem,5vw,3.5rem);
-}
-.contacto-caja h2{color:#fff;margin-bottom:.4em}
-.contacto-caja p{color:#CBD8CE}
-.campo{display:block;margin-bottom:1.15rem}
-.campo span{display:block;font-size:.82rem;font-weight:600;letter-spacing:.04em;margin-bottom:.4rem;color:#DCE5DE}
-.campo input,.campo textarea,.campo select{
-  width:100%;font-family:inherit;font-size:1rem;color:var(--texto);
-  padding:.8rem 1rem;border:2px solid transparent;border-radius:10px;background:var(--blanco-natural);
-}
-.campo textarea{min-height:130px;resize:vertical}
-.campo input:focus,.campo textarea:focus,.campo select:focus{outline:none;border-color:var(--verde-salvia)}
-.form-nota{font-size:.82rem;color:#B9C9BE;margin:.4rem 0 0}
-.contacto-rejilla{display:grid;gap:2.5rem}
-@media (min-width:860px){.contacto-rejilla{grid-template-columns:1fr 1fr;gap:3.5rem}}
-.contacto-lista{list-style:none;margin:1.5rem 0 0;padding:0}
-.contacto-lista li{margin-bottom:1.1rem;font-size:.97rem}
-.contacto-lista strong{display:block;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--salvia-clara);font-weight:600;margin-bottom:.15rem}
-.contacto-lista a{color:#fff}
-
-/* ---------- Pie ---------- */
-.sitio-footer{background:var(--verde-profundo);color:#B9C9BE;padding-block:3.25rem;font-size:.9rem}
-.footer-fila{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:flex-start}
-.sitio-footer a{color:#DCE5DE}
-.footer-legal{max-width:52ch;font-size:.82rem;line-height:1.65;color:#96A99C}
-.footer-marca{font-family:var(--display);font-size:1.5rem;color:#fff;margin:0 0 .3rem}
-.footer-nav{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
-.footer-base{border-top:1px solid rgba(255,255,255,.14);margin-top:2.5rem;padding-top:1.5rem;font-size:.8rem;color:#A3B5A9}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <a class="saltar" href="#contenido">Saltar al contenido</a>
 
-<header class="sitio-header">
-  <div class="contenedor header-fila">
-    <a class="marca" href="#inicio">
-      <span class="marca__sello" aria-hidden="true">✦</span>
-      <span class="marca__texto">
-        <span class="marca__nombre">Vientre de Luz</span>
-        <span class="marca__lema">El llamado de la tierra a volver a ella</span>
-        <span class="marca__sub">Autismo</span>
-      </span>
+<!-- ====================== CABECERA ====================== -->
+<header class="cabecera">
+  <div class="cabecera-fila">
+    <a class="marca" href="index.html">
+      <span class="marca-sello" aria-hidden="true">✦</span>
+      <span class="marca-texto">Vientre de Luz<small>Autismo</small></span>
     </a>
-    <nav class="nav-principal" id="nav-principal" aria-label="Navegación principal">
+    <button class="nav-boton" id="navBoton" aria-expanded="false" aria-controls="navMenu">Menú</button>
+    <nav class="nav" id="navMenu" aria-label="Principal">
       <ul>
-        <li><a href="#empezar">Primeros pasos</a></li>
-        <li><a href="#entender">Entender</a></li>
-        <li><a href="#rutas">Dónde acudir</a></li>
-        <li><a href="#derechos">Derechos</a></li>
-        <li><a href="#comunidad">Comunidad</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#bienvenida">Bienvenida</a></li>
+        <li><a href="recetas.html">Recetas</a></li>
+        <li><a href="#acompanamiento">Acompañamiento</a></li>
+        <li><a href="#bienestar">Bienestar</a></li>
+        <li><a href="#informacion">Información</a></li>
+        <li><a href="acerca.html">Acerca de</a></li>
       </ul>
     </nav>
-    <a class="boton boton--principal" href="#contacto">Escríbenos</a>
-    <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="nav-principal">
-      <span class="sr">Menú</span>
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
   </div>
 </header>
 
 <main id="contenido">
 
-<!-- ================= HERO ================= -->
-<section class="hero" id="inicio">
-  <div class="contenedor">
-    <div class="hero__contenido">
-      <hr class="hero__regla">
-      <h1>No caminas sola</h1>
-      <p>Somos una comunidad de familias que viven con el autismo. Aquí encuentras información clara, rutas reales de atención en México y personas que ya recorrieron este camino.</p>
-      <div class="botones">
-        <a class="boton boton--principal" href="#empezar">Acabo de recibir un diagnóstico</a>
-        <a class="boton boton--linea" href="#comunidad">Quiero acompañamiento</a>
-      </div>
+<!-- ====================== PORTADA · PASO 1 ====================== -->
+<section class="portada" id="bienvenida">
+  <!-- Sustituir este bloque por el logo real en SVG -->
+  <div class="portada-sello">
+    <div>
+      <div class="glifo" aria-hidden="true">✦</div>
+      <div class="nombre">Vientre<br>de Luz</div>
+      <div class="sub">Autismo</div>
+    </div>
+  </div>
+
+  <h1>Informar, inspirar y acompañar con amor y conciencia.</h1>
+
+  <span class="paso">Paso 1</span>
+  <a class="boton" href="#significado">Bienvenida</a>
+</section>
+
+<!-- ====================== SIGNIFICADO · PASO 2 ====================== -->
+<section class="seccion oscura" id="significado">
+  <div class="contenedor fila">
+    <div class="fila-media">
+      <div class="marco alto"><span>Logotipo Vientre de Luz</span></div>
+    </div>
+    <div>
+      <h2>Autismo</h2>
+      <p class="paso" style="margin-bottom:.75rem">Significado</p>
+      <p class="lema">El llamado de la tierra a volver a ella.</p>
+      <p>El autismo es una forma distinta de percibir, sentir y habitar el mundo. No es una enfermedad
+         ni algo que haya que reparar: es una condición del neurodesarrollo que acompaña a la persona
+         toda su vida. Comprenderla es el primer paso para acompañarla.</p>
+      <p style="margin-top:1.5rem">
+        <span class="paso" style="margin-bottom:.9rem">Paso 2</span>
+        <a class="boton" href="#primeros-pasos">Primeros pasos</a>
+      </p>
     </div>
   </div>
 </section>
 
-<!-- ================= PRIMEROS PASOS ================= -->
-<section class="seccion" id="empezar">
+<!-- ====================== PRIMEROS PASOS ====================== -->
+<section class="seccion arena" id="primeros-pasos">
   <div class="contenedor">
-    <div class="entrada">
-      <span class="etiqueta">Primeros pasos</span>
-      <h2>Lo primero, respira</h2>
-      <p>El diagnóstico no cambió a tu hijo o hija: es la misma persona que era ayer. Lo que cambia es que ahora tienes un nombre para lo que observabas, y con ese nombre se abren puertas de apoyo. Esto es lo que suele ayudar en los primeros meses.</p>
-    </div>
+    <h2 class="titulo-seccion">Acabas de recibir el diagnóstico</h2>
+    <p class="entradilla centro" style="max-width:62ch;margin:0 auto 3rem;text-align:center">
+      Los primeros días son de mucho ruido. Esto es lo que ayuda a ordenarlo.
+    </p>
 
-    <ol class="pasos">
-      <li class="paso">
-        <span class="paso__num" aria-hidden="true">1</span>
-        <div>
-          <h3>Consigue una valoración completa</h3>
-          <p>Un diagnóstico sólido lo hace un equipo: neurología o paidopsiquiatría infantil, más valoración de lenguaje y terapia ocupacional. Pide que te expliquen el perfil de tu hijo, no solo la etiqueta: en qué es fuerte, qué le cuesta, qué apoyos necesita.</p>
-        </div>
-      </li>
-      <li class="paso">
-        <span class="paso__num" aria-hidden="true">2</span>
-        <div>
-          <h3>Empieza los apoyos que sí tienen respaldo</h3>
-          <p>Los de mejor respaldo son la terapia de lenguaje y comunicación y las intervenciones naturalistas centradas en el desarrollo y el juego. La terapia ocupacional ayuda mucho con autonomía y vida diaria, aunque la evidencia del enfoque de integración sensorial es más limitada de lo que suele decirse. Entre más temprano, mejor — pero nunca es tarde, y el objetivo es que se comunique y esté a gusto, no que "parezca normal".</p>
-        </div>
-      </li>
-      <li class="paso">
-        <span class="paso__num" aria-hidden="true">3</span>
-        <div>
-          <h3>Habla con la escuela</h3>
-          <p>La ley obliga a las escuelas a inscribir y a hacer ajustes. Pide el apoyo de USAER si es escuela pública. Lleva por escrito qué necesita tu hijo: descansos sensoriales, instrucciones cortas, avisos anticipados de cambios.</p>
-        </div>
-      </li>
-      <li class="paso">
-        <span class="paso__num" aria-hidden="true">4</span>
-        <div>
-          <h3>Busca a otras familias</h3>
-          <p>Es el apoyo que más sostiene y el que menos se receta. Otras madres y padres te van a ahorrar meses de trámites, de terapias que no sirven y de sentirte sola a las tres de la mañana.</p>
-        </div>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<!-- ================= ENTENDER ================= -->
-<section class="seccion seccion--arena" id="entender">
-  <div class="contenedor">
-    <div class="entrada">
-      <span class="etiqueta">Entender</span>
-      <h2>Qué es el autismo, en palabras simples</h2>
-      <p>El autismo es una forma distinta en que el cerebro se desarrolla y procesa el mundo. Está presente desde el nacimiento y acompaña a la persona toda la vida. No es una enfermedad, no es un daño, y no es culpa de nadie.</p>
-    </div>
-
-    <div class="rejilla rejilla--3">
+    <div class="rejilla rejilla-3">
       <article class="tarjeta">
-        <div class="tarjeta__icono" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 0 0-4 4v1a4 4 0 0 0 0 8v1a4 4 0 0 0 8 0v-1a4 4 0 0 0 0-8V7a4 4 0 0 0-4-4Z"/></svg>
-        </div>
-        <h3>Es neurológico, no digestivo</h3>
-        <p>Las diferencias están en cómo se conectan y comunican las redes del cerebro. No hay una toxina que sacar ni un parásito que expulsar. Algunos niños sí tienen problemas digestivos reales y merecen atención médica seria — pero tratarlos no quita el autismo.</p>
+        <span class="tarjeta-num">01</span>
+        <h3>Respira</h3>
+        <p>Tu hijo es el mismo de ayer. Lo que cambió es que ahora tienes un nombre para lo que ya veías,
+           y con ese nombre vienen apoyos a los que antes no podías acceder.</p>
       </article>
       <article class="tarjeta">
-        <div class="tarjeta__icono" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg>
-        </div>
-        <h3>El mundo sensorial se vive más fuerte</h3>
-        <p>Ruidos, luces, texturas y etiquetas de la ropa pueden ser abrumadores de verdad. Muchas crisis no son berrinches: son saturación. Bajar los estímulos ayuda más que exigir aguante.</p>
+        <span class="tarjeta-num">02</span>
+        <h3>Pide el informe por escrito</h3>
+        <p>Con el diagnóstico en papel se abren las puertas: terapias, apoyos escolares y los derechos
+           que te da la ley. Guarda copias, las vas a necesitar más de una vez.</p>
       </article>
       <article class="tarjeta">
-        <div class="tarjeta__icono" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2Z"/></svg>
-        </div>
-        <h3>No hablar no es no tener nada que decir</h3>
-        <p>Hay muchas formas de comunicar: gestos, imágenes, tableros, tablets. Dar herramientas de comunicación no frena el habla — la impulsa, y baja muchísimo la frustración de toda la casa.</p>
-      </article>
-    </div>
-
-    <div class="entrada" style="margin-top:3.5rem">
-      <h2>Mitos que hacen daño</h2>
-      <p>Circulan con mucha fuerza en redes y grupos de WhatsApp. Vale la pena tenerlos claros.</p>
-    </div>
-
-    <div class="mito">
-      <div class="mito__falso"><span class="mito__tag mito__tag--f">Mito</span><p>Las vacunas causan autismo.</p></div>
-      <div class="mito__real"><span class="mito__tag mito__tag--v">Realidad</span><p>El estudio que lo afirmó era fraudulento, fue retirado, y a su autor le quitaron la licencia médica. Desde entonces se ha estudiado en millones de niños sin encontrar relación alguna. No vacunar sí expone a tu hijo a enfermedades graves y reales.</p></div>
-    </div>
-    <div class="mito">
-      <div class="mito__falso"><span class="mito__tag mito__tag--f">Mito</span><p>El autismo se cura con dietas, desintoxicaciones o protocolos alternativos.</p></div>
-      <div class="mito__real"><span class="mito__tag mito__tag--v">Realidad</span><p>No hay cura porque no hay enfermedad que curar. Lo que sí existe son apoyos que mejoran muchísimo la comunicación, la autonomía y la calidad de vida. Quien te promete una cura te está pidiendo dinero, fe o ambas.</p></div>
-    </div>
-    <div class="mito">
-      <div class="mito__falso"><span class="mito__tag mito__tag--f">Mito</span><p>Es por padres fríos, por pantallas o por algo que hizo la mamá en el embarazo.</p></div>
-      <div class="mito__real"><span class="mito__tag mito__tag--v">Realidad</span><p>El componente genético es fuerte y no hay nada que hayas hecho o dejado de hacer. La culpa que muchas madres cargan es injusta y no está sostenida por ninguna evidencia.</p></div>
-    </div>
-    <div class="mito">
-      <div class="mito__falso"><span class="mito__tag mito__tag--f">Mito</span><p>Si no habla a los tres años, ya no va a hablar.</p></div>
-      <div class="mito__real"><span class="mito__tag mito__tag--v">Realidad</span><p>Muchos niños desarrollan lenguaje después, algunos bastante después. Y quienes no lo hacen pueden comunicarse plenamente por otras vías. El pronóstico no se cierra a ninguna edad.</p></div>
-    </div>
-
-    <div class="aviso" style="margin-top:3rem">
-      <h3>Sobre los "protocolos" que prometen revertir el autismo</h3>
-      <p>Nos importa decirlo con claridad, porque a nuestra comunidad llegan familias que ya los probaron: hay tratamientos que circulan como naturales y que son peligrosos.</p>
-      <ul>
-        <li><strong>Dióxido de cloro (CDS, MMS)</strong>, por vía oral o en enemas. Es un desinfectante industrial. Provoca quemaduras químicas del intestino, vómito, deshidratación y daño renal. Los "parásitos" que se ven salir son tejido del intestino del niño desprendiéndose. Ha causado hospitalizaciones de niños y hay muertes documentadas por su ingesta.</li>
-        <li><strong>Quelación</strong> para "sacar metales pesados" sin intoxicación comprobada por laboratorio. Ha causado paros cardiacos en niños.</li>
-        <li><strong>Agua de mar</strong> en cantidad, cámaras hiperbáricas, ayunos prolongados y suplementos en dosis altas sin control médico.</li>
-      </ul>
-      <p>Si tu familia está usando alguno de estos, no es momento de culpas — casi siempre se llega ahí por amor y por desesperación. Suspéndelo y busca una valoración médica, porque hay daños que no se ven por fuera.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CITA ================= -->
-<section class="seccion seccion--bosque">
-  <div class="contenedor">
-    <blockquote class="cita">
-      La meta no es que deje de ser autista. Es que sea feliz siendo quien es.
-      <span class="cita__pie">Vientre de Luz</span>
-    </blockquote>
-  </div>
-</section>
-
-<!-- ================= RUTAS ================= -->
-<section class="seccion" id="rutas">
-  <div class="contenedor">
-    <div class="entrada">
-      <span class="etiqueta">Dónde acudir</span>
-      <h2>Rutas de atención en México</h2>
-      <p>No todas están disponibles en todos los estados y las listas de espera pueden ser largas. Vale la pena registrarse en varias a la vez.</p>
-    </div>
-
-    <div class="ruta">
-      <div>
-        <h3>Centro Autismo Teletón</h3>
-        <p class="ruta__quien">Gratuito o cuota social</p>
-      </div>
-      <div>
-        <p>Valoración diagnóstica integral en autismo, diagnóstico diferencial de trastornos del neurodesarrollo, orientación a familias y cuidadores. Los CRIT en todo el país también atienden a niñas, niños y adolescentes autistas.</p>
-        <p class="ruta__dato">Ecatepec, Edomex · Tel. 55 5699 2122 · Lun a vie, 7:30 a 18:00</p>
-      </div>
-    </div>
-
-    <div class="ruta">
-      <div>
-        <h3>DIF estatal y municipal</h3>
-        <p class="ruta__quien">Gratuito</p>
-      </div>
-      <div>
-        <p>Varios estados tienen centros o unidades de atención al autismo con diagnóstico y terapias. Pregunta en el DIF de tu estado por "atención a personas con discapacidad" o "neurodesarrollo". Suele ser la puerta de entrada más rápida y menos conocida.</p>
-      </div>
-    </div>
-
-    <div class="ruta">
-      <div>
-        <h3>IMSS · ISSSTE · IMSS-Bienestar</h3>
-        <p class="ruta__quien">Con o sin seguridad social</p>
-      </div>
-      <div>
-        <p>Si no tienes seguridad social, IMSS-Bienestar es hoy la vía de atención pública (sustituyó al Seguro Popular y al INSABI). La ruta empieza con tu médico familiar o tu centro de salud, que refiere a pediatría y de ahí a paidopsiquiatría o neurología pediátrica. Insiste y pide la referencia por escrito: por ley no te pueden negar la canalización a atención especializada.</p>
-      </div>
-    </div>
-
-    <div class="ruta">
-      <div>
-        <h3>USAER — escuelas públicas</h3>
-        <p class="ruta__quien">Gratuito</p>
-      </div>
-      <div>
-        <p>Unidad de Servicios de Apoyo a la Educación Regular. Acompañan al maestro y a tu hijo dentro de la escuela ordinaria, y ayudan a diseñar los ajustes razonables del salón. Se solicita a través de la dirección del plantel.</p>
-      </div>
-    </div>
-
-    <div class="ruta">
-      <div>
-        <h3>Universidades públicas</h3>
-        <p class="ruta__quien">Cuota reducida</p>
-      </div>
-      <div>
-        <p>Las facultades de psicología, comunicación humana y rehabilitación suelen tener clínicas abiertas al público con costos muy bajos y supervisión académica. Es una opción excelente y muy poco usada.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= DERECHOS ================= -->
-<section class="seccion seccion--arena" id="derechos">
-  <div class="contenedor">
-    <div class="entrada">
-      <span class="etiqueta">Derechos</span>
-      <h2>Lo que la ley ya te garantiza</h2>
-      <p>La Ley General para la Atención y Protección a Personas con la Condición del Espectro Autista se publicó en 2015. Muchas familias no saben que existe, y saberla cambia por completo el tono de una conversación con una escuela o un hospital.</p>
-    </div>
-
-    <div class="rejilla rejilla--2">
-      <article class="tarjeta">
-        <h3>Tienes derecho a</h3>
-        <p>Un diagnóstico oportuno, preciso y sin sesgos. Consultas y terapias especializadas. Atención médica de calidad con acceso oportuno a medicamentos. Educación bajo principios de integración e inclusión. Seguridad social, transporte, cultura, deporte y trabajo digno. Asesoría jurídica cuando se violen tus derechos.</p>
+        <span class="tarjeta-num">03</span>
+        <h3>Empieza por la comunicación</h3>
+        <p>Antes que cualquier otra cosa, terapia de lenguaje y comunicación. Poder expresar lo que
+           se necesita cambia la vida diaria de toda la casa.</p>
       </article>
       <article class="tarjeta">
-        <h3>Está prohibido</h3>
-        <p>Que un centro de salud rechace la atención. Que te nieguen orientación o la canalización a un especialista. La sobremedicación, las terapias riesgosas y la internación psiquiátrica injustificada. Que una escuela niegue la inscripción. Que no actúe ante el acoso escolar. Que una aseguradora niegue el derecho a contratar un seguro de gastos médicos por la condición.</p>
-      </article>
-    </div>
-
-    <div class="botones">
-      <a class="boton boton--linea" href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LGAPPCEA_270516.pdf" target="_blank" rel="noopener">Leer la ley completa (PDF)</a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= EN CASA ================= -->
-<section class="seccion" id="casa">
-  <div class="contenedor">
-    <div class="entrada">
-      <span class="etiqueta">En casa</span>
-      <h2>Cosas que ayudan hoy mismo</h2>
-      <p>Pequeños ajustes que no cuestan dinero y que suelen bajar la tensión de toda la familia.</p>
-    </div>
-
-    <div class="rejilla rejilla--3">
-      <article class="tarjeta">
-        <h3>Avisa los cambios antes</h3>
-        <p>"En cinco minutos guardamos" evita muchas crisis. Lo difícil casi nunca es la actividad nueva; es la sorpresa.</p>
+        <span class="tarjeta-num">04</span>
+        <h3>Anota lo que observas</h3>
+        <p>Qué lo calma, qué lo altera, a qué hora, en qué lugar. Ese cuaderno vale oro cuando
+           llegue la primera consulta con especialista.</p>
       </article>
       <article class="tarjeta">
-        <h3>Haz visible la rutina</h3>
-        <p>Una tira de dibujos o fotos con la secuencia del día da una sensación de control enorme cuando las palabras van muy rápido.</p>
+        <span class="tarjeta-num">05</span>
+        <h3>Busca a otras familias</h3>
+        <p>Nadie entiende esto como quien ya lo vivió. Aquí abajo puedes escribirnos y
+           acompañarte de otras familias que van más adelante en el camino.</p>
       </article>
       <article class="tarjeta">
-        <h3>Crea un rincón de calma</h3>
-        <p>Un lugar sin ruido ni luz fuerte al que pueda ir cuando se satura. No es castigo ni premio: es un recurso suyo.</p>
-      </article>
-      <article class="tarjeta">
-        <h3>Frases cortas, una a la vez</h3>
-        <p>Menos palabras y más tiempo de espera. Procesar puede tardar varios segundos y llenarlos de instrucciones estorba.</p>
-      </article>
-      <article class="tarjeta">
-        <h3>Los intereses intensos son aliados</h3>
-        <p>Trenes, dinosaurios, banderas. Son motor de aprendizaje y de vínculo. Entra por ahí en vez de intentar apagarlo.</p>
-      </article>
-      <article class="tarjeta">
-        <h3>Cuida a quien cuida</h3>
-        <p>Tu descanso no es lujo, es parte del tratamiento. Un cuidador agotado no puede sostener a nadie. Pide relevo sin culpa.</p>
+        <span class="tarjeta-num">06</span>
+        <h3>Cuídate tú</h3>
+        <p>No es egoísmo, es logística. Un cuidador agotado no puede sostener a nadie.
+           Dormir, comer y pedir ayuda también son parte del tratamiento.</p>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ================= COMUNIDAD ================= -->
-<section class="seccion seccion--bosque" id="comunidad">
+<!-- ====================== RECETAS · PASO 3 ====================== -->
+<section class="seccion clara" id="recetas">
+  <div class="contenedor fila">
+    <div>
+      <h2>Recetas<br>integrales</h2>
+      <p>Videos de recetas de postres, desayunos, comidas y bebidas sencillas, pensadas para
+         la vida real de una familia ocupada.</p>
+      <p>Muchos niños autistas tienen una relación distinta con la comida: texturas que no toleran,
+         olores que abruman, colores que importan. Estas recetas parten de ahí — de acompañar
+         esa sensibilidad en lugar de pelearse con ella.</p>
+      <p style="margin-top:1.75rem">
+        <span class="paso" style="margin-bottom:.9rem">Paso 3</span>
+        <a class="boton" href="recetas.html">Ver recetas</a>
+      </p>
+    </div>
+    <div class="fila-media">
+      <div class="marco"><span>Fotografía · familia en la playa</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== ACOMPAÑAMIENTO · PASO 4 ====================== -->
+<section class="seccion oscura" id="acompanamiento">
   <div class="contenedor">
-    <div class="entrada">
-      <span class="etiqueta">Comunidad</span>
-      <h2>Nadie debería recorrer esto solo</h2>
-      <p>Vientre de Luz es, antes que nada, una red de familias. Compartimos experiencias, nos avisamos de trámites y terapias, y nos escuchamos cuando el día fue duro.</p>
+    <span class="paso">Paso 4</span>
+    <h2 class="titulo-seccion">Acompañamiento</h2>
+
+    <div class="marco ancho" style="margin-bottom:3rem">
+      <span>Video · Vientre de Luz</span>
     </div>
 
-    <div class="rejilla rejilla--3">
+    <div class="fila">
+      <div class="fila-media">
+        <div class="marco"><span>Fotografía · terapia de juego</span></div>
+      </div>
+      <div>
+        <h3>Apoyos que sostienen</h3>
+        <p>No existe un tratamiento que quite el autismo, y desconfía de quien te prometa lo contrario.
+           Lo que sí existe, y funciona, son apoyos que amplían lo que tu hijo puede hacer y disfrutar:</p>
+        <ul class="recursos">
+          <li><strong>Terapia de lenguaje y comunicación</strong>
+              <span>Lo primero y lo más urgente. Incluye comunicación aumentativa —pictogramas, tableros,
+                    apps— cuando el habla no llega o tarda.</span></li>
+          <li><strong>Terapia ocupacional</strong>
+              <span>Vestirse, comer, dormir, tolerar la textura de la ropa. La autonomía diaria se entrena.</span></li>
+          <li><strong>Intervención centrada en el juego</strong>
+              <span>Modelos naturalistas del desarrollo: se aprende jugando, siguiendo el interés del niño
+                    en lugar de imponerle el del adulto.</span></li>
+          <li><strong>Acompañamiento a la familia</strong>
+              <span>Los papás también necesitan herramientas y descanso. Es parte del proceso, no un extra.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="fila invertida" style="margin-top:clamp(2.5rem,5vw,4rem)">
+      <div class="fila-media">
+        <div class="marco"><span>Fotografía · alimentación</span></div>
+      </div>
+      <div>
+        <h3>Alimentación y sentidos</h3>
+        <p>Comer bien ayuda a todos, y a un niño con sueño irregular o malestar digestivo lo ayuda
+           todavía más. Comida real, horarios estables, agua suficiente y paciencia con las texturas.</p>
+        <p>Si tu hijo come muy pocos alimentos o pierde peso, eso sí necesita a un nutriólogo o
+           gastroenterólogo pediátrico. La selectividad alimentaria es común y tiene manejo.</p>
+        <p><strong>Una advertencia honesta:</strong> ninguna dieta ni suplemento revierte el autismo.
+           Antes de retirar grupos enteros de alimentos, consúltalo — en niños en crecimiento las
+           restricciones sin supervisión pueden hacer daño.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== MÉTODOS ALTERNATIVOS · PASO 5 ====================== -->
+<section class="seccion clara" id="bienestar">
+  <div class="contenedor">
+    <span class="paso">Paso 5</span>
+    <h2 class="titulo-seccion">Métodos alternativos</h2>
+    <p class="entradilla" style="max-width:64ch;margin:0 auto 3rem;text-align:center">
+      Prácticas que algunas familias incorporan a su rutina por el bienestar y la calma que
+      les generan. Ninguna trata el autismo ni sustituye a las terapias — acompañan, no reemplazan.
+    </p>
+
+    <div class="fila">
+      <div class="fila-media">
+        <div class="marco"><span>Fotografía · aceite de ricino</span></div>
+      </div>
+      <div>
+        <h3>Aceite de ricino</h3>
+        <p><strong>Aceite de ricino en el ombligo.</strong> El ombligo nos unió a la vida desde el
+           vientre materno. Aplicar aceite de ricino en el ombligo por las noches es una práctica
+           tradicional que muchas familias usan como ritual de cierre del día: el contacto, el masaje
+           suave y la rutina fija ayudan a preparar el cuerpo para dormir.</p>
+        <p class="entradilla" style="font-size:.9rem"><strong>Lo que sí y lo que no:</strong> el aceite
+           de ricino aplicado en la piel es seguro salvo alergia — prueba primero en una zona pequeña.
+           No genera células madre ni regenera órganos, y no debe ingerirse: por vía oral es un
+           laxante fuerte y en niños puede causar deshidratación.</p>
+      </div>
+    </div>
+
+    <div class="fila invertida">
+      <div class="fila-media">
+        <div class="marco"><span>Fotografía · biomagnetismo</span></div>
+      </div>
+      <div>
+        <h3>Biomagnetismo</h3>
+        <p>Práctica terapéutica alternativa que utiliza campos magnéticos (imanes) para intentar
+           equilibrar el pH del cuerpo y mejorar la salud, basándose en la premisa de que muchas
+           enfermedades son causadas por alteraciones energéticas.</p>
+        <p class="entradilla" style="font-size:.9rem"><strong>Para que decidas informada:</strong>
+           esta premisa no está respaldada por la ciencia y los estudios no han encontrado efecto
+           sobre el autismo. Los imanes de superficie no causan daño físico. Lo compartimos porque
+           familias de la comunidad lo practican, no como recomendación de tratamiento.</p>
+      </div>
+    </div>
+
+    <div class="fila">
+      <div class="fila-media">
+        <div class="marco"><span>Fotografía · naturaleza</span></div>
+      </div>
+      <div>
+        <h3>Tiempo en la tierra</h3>
+        <p>Caminar descalzo en el pasto, meter las manos en la tierra, el mar, los árboles, el silencio
+           del campo. Muchas familias notan a sus hijos más regulados después de un rato afuera,
+           lejos del ruido y las luces.</p>
+        <p>No es magia: es menos estímulo, más movimiento y más luz natural, y eso ordena el sueño.
+           Es gratis, no tiene efectos secundarios, y es de las pocas cosas que se pueden hacer
+           todos los días sin pedirle permiso a nadie.</p>
+      </div>
+    </div>
+
+    <div class="fila invertida">
+      <div class="fila-media">
+        <div class="marco"><span>Fotografía · rincón de calma</span></div>
+      </div>
+      <div>
+        <h3>Regulación sensorial</h3>
+        <p>Un rincón de calma en casa: poca luz, cojines, una cobija pesada, audífonos para el ruido.
+           Un lugar al que tu hijo pueda ir cuando el mundo se le viene encima, sin que nadie lo regañe
+           por necesitarlo.</p>
+        <p>Y rutinas visibles — un tablero con dibujos de lo que sigue en el día. Anticipar el cambio
+           evita la mitad de las crisis. Lo que parece berrinche casi siempre es un sistema nervioso
+           saturado pidiendo ayuda.</p>
+      </div>
+    </div>
+
+    <!-- Podcast · sustituir por el <iframe> de Spotify -->
+    <div class="marco ancho estrecho" style="margin-top:clamp(2.5rem,5vw,3.5rem);aspect-ratio:auto;min-height:170px">
+      <span>Podcast · Spotify</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== INFORMACIÓN Y DERECHOS · PASO 6 ====================== -->
+<section class="seccion oscura" id="informacion">
+  <div class="contenedor">
+    <span class="paso">Paso 6</span>
+    <h2 class="titulo-seccion">Vacunas: información científica</h2>
+
+    <div class="estrecho" style="margin-bottom:clamp(2.5rem,5vw,4rem)">
+      <p>Es una de las preguntas que más llegan, y merece una respuesta con nombre y fecha
+         en lugar de un rumor.</p>
+      <p>La idea de que las vacunas causan autismo nació de un estudio publicado en 1998 por
+         Andrew Wakefield, con doce niños. <em>The Lancet</em> lo retiró por completo en 2010 y
+         Wakefield perdió la licencia médica en el Reino Unido.</p>
+      <p>Después se estudió a fondo. En Dinamarca se siguió a más de 650 mil niños; en un
+         metaanálisis se reunieron más de 1.2 millones. Ninguno encontró relación entre la vacuna
+         triple viral y el autismo.</p>
+      <p>Hay además una razón de tiempo que suele pasar desapercibida: los estudios de imagen y de
+         desarrollo muestran diferencias detectables <strong>antes</strong> de la edad en que se
+         aplican esas vacunas. El autismo empieza a formarse durante el embarazo. Lo que ocurre entre
+         los 12 y los 24 meses es que los signos se vuelven visibles, y ahí coinciden en el calendario
+         con las vacunas. Coincidir no es causar.</p>
+      <p>Si tienes dudas sobre el esquema de vacunación de tu hijo, quien mejor puede resolverlas es
+         su pediatra, con su historia clínica en la mano.</p>
+    </div>
+
+    <h3 class="titulo-seccion" style="font-size:clamp(1.4rem,3vw,2rem)">Información y derechos</h3>
+
+    <div class="fila" style="margin-bottom:clamp(2.5rem,5vw,3.5rem)">
+      <div>
+        <h3>Dónde acudir en México</h3>
+        <ul class="recursos">
+          <li><strong>IMSS · ISSSTE · IMSS-Bienestar</strong>
+              <span>Si tienes derechohabiencia, empieza con tu médico familiar y pide referencia a
+                    neurología o paidopsiquiatría pediátrica. Sin seguridad social, IMSS-Bienestar
+                    atiende en los centros de salud estatales.</span></li>
+          <li><strong>CRI Teletón y Centro Autismo Teletón</strong>
+              <span>Red nacional con evaluación diagnóstica integral en autismo. El Centro Autismo
+                    Teletón está en Ecatepec, Estado de México — 55 5699 2122, lunes a viernes.
+                    Cuota según estudio socioeconómico.</span></li>
+          <li><strong>DIF estatal y municipal</strong>
+              <span>Varios estados ofrecen valoración y terapias con cuota de recuperación.
+                    Pregunta por el área de rehabilitación o el CRIE de tu estado.</span></li>
+          <li><strong>USAER en escuela pública</strong>
+              <span>Unidades de Servicios de Apoyo a la Educación Regular. Acompañan al niño dentro
+                    del aula ordinaria. Se solicitan en la dirección de la escuela.</span></li>
+          <li><strong>Universidades públicas</strong>
+              <span>Muchas facultades de psicología y de comunicación humana dan servicio a bajo costo
+                    en sus clínicas escolares.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Lo que dice la ley</h3>
+        <p>La <em>Ley General para la Atención y Protección a Personas con la Condición del Espectro
+           Autista</em> (2015) reconoce derechos que puedes exigir:</p>
+        <ul class="recursos">
+          <li><strong>Diagnóstico oportuno y sin sesgos</strong>
+              <span>Y consultas especializadas con acceso a medicación cuando se requiera.</span></li>
+          <li><strong>Educación inclusiva</strong>
+              <span>Ninguna escuela puede negar la inscripción por la condición. Está prohibido.</span></li>
+          <li><strong>Atención médica que no se puede rechazar</strong>
+              <span>La ley prohíbe negar consulta, negar la referencia a especialista, la
+                    sobremedicación y las terapias riesgosas.</span></li>
+          <li><strong>Seguro médico y trabajo digno</strong>
+              <span>No se puede negar un seguro por la condición, ni discriminar en la contratación.</span></li>
+          <li><strong>Asesoría jurídica</strong>
+              <span>Si alguno de estos derechos se viola. CONAPRED recibe quejas por discriminación.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="centro">
+      <a class="boton" href="acerca.html">Más información</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== MITOS ====================== -->
+<section class="seccion arena" id="mitos">
+  <div class="contenedor">
+    <h2 class="titulo-seccion">Preguntas que llegan seguido</h2>
+
+    <div class="rejilla rejilla-2" style="margin-bottom:2.5rem">
       <article class="tarjeta">
-        <h3>Círculo de familias</h3>
-        <p>Encuentros para madres, padres y cuidadores. Sin juicios y sin recetas: escuchar y ser escuchado.</p>
+        <h3>¿El autismo se cura?</h3>
+        <p>No, y tampoco es algo que haya que curar. Es una forma distinta de funcionar, presente desde
+           antes de nacer. Lo que sí cambia —y mucho— es cuánto puede hacer y disfrutar una persona
+           cuando recibe los apoyos correctos a tiempo.</p>
       </article>
       <article class="tarjeta">
-        <h3>Orientación de trámites</h3>
-        <p>Te ayudamos a ubicar a dónde acudir en tu estado y qué papeles necesitas para no dar vueltas de más.</p>
+        <h3>¿Lo causan las vacunas?</h3>
+        <p>No. El estudio que originó esa idea fue retirado por la revista que lo publicó y su autor
+           perdió la licencia médica. Estudios posteriores con más de un millón de niños no
+           encontraron ninguna relación.</p>
       </article>
       <article class="tarjeta">
-        <h3>Historias reales</h3>
-        <p>Familias que cuentan lo que les funcionó y lo que no. Sin promesas y sin milagros.</p>
+        <h3>¿Es culpa de los papás?</h3>
+        <p>No. No lo causa la crianza, ni el carácter de la mamá, ni algo que hayas hecho durante el
+           embarazo. Esa idea se descartó hace décadas y hizo mucho daño mientras duró.</p>
+      </article>
+      <article class="tarjeta">
+        <h3>¿Todos los autistas son iguales?</h3>
+        <p>No. Es un espectro amplísimo. Hay quien necesita apoyo constante y quien vive de forma
+           independiente. Conocer a una persona autista es conocer a una persona autista.</p>
+      </article>
+    </div>
+
+    <div class="aviso estrecho">
+      <h3>Sobre los protocolos que circulan</h3>
+      <p>En redes circulan protocolos que prometen revertir el autismo: dióxido de cloro (CDS o MMS),
+         quelación sin intoxicación comprobada, dietas extremas, megadosis de suplementos.
+         Queremos ser claras, con cariño y sin señalar a nadie.</p>
+      <p>Ninguno tiene respaldo, y varios causan daño real: quemaduras del tubo digestivo, anemia
+         hemolítica, metahemoglobinemia y falla renal en niños. El dióxido de cloro tiene alerta
+         sanitaria vigente de COFEPRIS. Lo que en esos protocolos se identifica como parásitos
+         expulsados es mucosa intestinal desprendida por la quemadura química.</p>
+      <p>Si alguien de tu casa está usando alguno de estos protocolos, díselo al pediatra —
+         no para que te juzgue, sino porque ningún médico puede tratar lo que no sabe. Y ante
+         labios o dedos grisáceos, orina oscura, piel amarillenta o mucho sueño, acude a urgencias.
+         <strong>Toxicología, 24 horas y sin costo: 800 000 2800.</strong></p>
+      <p>Si llegaste hasta aquí buscando algo que ayude a tu hijo, no te equivocaste de lugar.
+         Escríbenos. Te acompañamos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== BIENESTAR / DONACIONES / ACERCA DE ====================== -->
+<section class="seccion clara">
+  <div class="contenedor centro">
+    <h2 class="titulo-seccion" style="max-width:22ch;margin-inline:auto">
+      Información de bienestar y un entorno de armonía y cuidado
+    </h2>
+    <div class="rejilla rejilla-2 estrecho" style="margin-top:2.5rem">
+      <article class="tarjeta">
+        <h3>Donaciones</h3>
+        <p>Vientre de Luz es una organización sin fines de lucro. Lo que llega se destina a materiales,
+           talleres y acompañamiento a familias.</p>
+        <!-- Sustituir por el botón real de PayPal (paypal.me o el formulario de donaciones) -->
+        <p style="margin-top:1.25rem"><a class="boton boton-solido" href="#contacto">Donar con PayPal</a></p>
+      </article>
+      <article class="tarjeta">
+        <h3>Acerca de</h3>
+        <p>Quiénes somos, en qué creemos, nuestro enfoque y el aviso de privacidad del sitio.</p>
+        <p style="margin-top:1.25rem"><a class="boton" href="acerca.html">Conócenos</a></p>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ================= CONTACTO ================= -->
-<section class="seccion" id="contacto">
-  <div class="contenedor">
-    <div class="contacto-caja">
-      <div class="contacto-rejilla">
-        <div>
-          <h2>Escríbenos</h2>
-          <p>Cuéntanos qué necesitas. Respondemos personalmente, aunque a veces tardamos unos días.</p>
-          <ul class="contacto-lista">
-            <li><strong>Correo</strong><a href="mailto:vientredeluzmx@gmail.com">vientredeluzmx@gmail.com</a></li>
-            <li><strong>Instagram</strong><a href="https://instagram.com/vientredeluzmx" target="_blank" rel="noopener">@vientredeluzmx</a></li>
-            <li><strong>Facebook</strong><a href="https://facebook.com/vientredeluzmx" target="_blank" rel="noopener">@vientredeluzmx</a></li>
-          </ul>
-        </div>
+<!-- ====================== EXPERIENCIAS / CONTACTO ====================== -->
+<section class="seccion oscura" id="contacto">
+  <div class="contenedor fila">
+    <div>
+      <h2>Experiencias</h2>
+      <p>Si no cuentas con todo para comenzar, ya sea dinero o fuerza de voluntad, por favor inicia
+         con lo que tengas y cuéntanos cómo Dios te apoyó con el resto.</p>
+      <p>Escríbenos a <a href="mailto:vientredeluzmx@gmail.com" style="color:var(--salvia-clara)">vientredeluzmx@gmail.com</a>
+         o déjanos tus datos aquí y te contactamos.</p>
 
-        <!-- Provisional: sin servidor, el formulario abre la app de correo de quien escribe.
-             Para conectar Formspree: cambia el action por https://formspree.io/f/TU-ID
-             y borra el bloque "Contacto por correo" del <script> al final. -->
-        <form id="form-contacto" action="mailto:vientredeluzmx@gmail.com" method="post" enctype="text/plain">
-          <label class="campo">
-            <span>Tu nombre</span>
-            <input type="text" name="nombre" autocomplete="name" required>
-          </label>
-          <label class="campo">
-            <span>Correo</span>
-            <input type="email" name="email" autocomplete="email" required>
-          </label>
-          <label class="campo">
-            <span>¿En qué te podemos acompañar?</span>
-            <select name="tema">
-              <option>Acabo de recibir un diagnóstico</option>
-              <option>Busco dónde atenderme en mi estado</option>
-              <option>Tengo un problema en la escuela</option>
-              <option>Quiero unirme a la comunidad</option>
-              <option>Quiero apoyar como voluntario</option>
-              <option>Otro</option>
-            </select>
-          </label>
-          <label class="campo">
-            <span>Mensaje</span>
-            <textarea name="mensaje" required></textarea>
-          </label>
-          <button class="boton boton--claro" type="submit">Enviar mensaje</button>
-          <p class="form-nota">Al enviar se abre tu aplicación de correo con el mensaje ya escrito, para que lo revises antes de mandarlo. No compartimos tus datos con nadie. No damos diagnósticos ni indicaciones médicas por este medio.</p>
-          <p class="form-nota" id="form-aviso" role="status" hidden>Abrimos tu aplicación de correo. Si no se abrió, escríbenos directamente a <a href="mailto:vientredeluzmx@gmail.com">vientredeluzmx@gmail.com</a>.</p>
-        </form>
-      </div>
+      <!-- Para activar: crea un formulario en formspree.io y pega tu ID -->
+      <form class="formulario" action="https://formspree.io/f/TU-ID-AQUI" method="POST" style="margin-top:2rem">
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+        </div>
+        <div class="campo">
+          <label for="correo">Correo</label>
+          <input type="email" id="correo" name="correo" autocomplete="email" required>
+        </div>
+        <div class="campo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" required></textarea>
+        </div>
+        <div><button class="boton boton-solido" type="submit">Enviar</button></div>
+      </form>
+    </div>
+    <div class="fila-media">
+      <div class="marco alto"><span>Fotografía · escribiendo</span></div>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- ================= PIE ================= -->
-<footer class="sitio-footer" id="acerca">
-  <div class="contenedor">
-    <div class="footer-fila">
-      <div>
-        <p class="footer-marca">Vientre de Luz</p>
-        <p style="margin-bottom:1.25rem;color:#96A99C;font-size:.82rem;letter-spacing:.2em;text-transform:uppercase">Autismo</p>
-        <p class="footer-legal">Organización no gubernamental sin fines de lucro dedicada a la concientización, el acompañamiento y la difusión de información sobre el autismo, desde una visión humana y empática.</p>
+<!-- ====================== PIE ====================== -->
+<footer class="pie">
+  <div class="pie-fila">
+    <div>
+      <p class="pie-marca">VIENTREDELUZ.COM</p>
+      <h4>¿Quiénes somos?</h4>
+      <p>Somos una comunidad informada, empática y abierta al aprendizaje, donde el autismo sea
+         comprendido con mayor sensibilidad, respeto y esperanza.</p>
+      <h4 style="margin-top:1.5rem">Redes sociales</h4>
+      <div class="redes">
+        <a href="https://www.facebook.com/vientredeluzmx" aria-label="Facebook"><span aria-hidden="true">f</span></a>
+        <a href="https://www.instagram.com/vientredeluzmx" aria-label="Instagram"><span aria-hidden="true">ig</span></a>
       </div>
-
-      <ul class="footer-nav">
-        <li><a href="#empezar">Primeros pasos</a></li>
-        <li><a href="#entender">Entender el autismo</a></li>
-        <li><a href="#rutas">Dónde acudir</a></li>
-        <li><a href="#derechos">Derechos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+    </div>
+    <div>
+      <h4>Secciones</h4>
+      <ul>
+        <li><a href="#bienvenida">Bienvenida</a></li>
+        <li><a href="#primeros-pasos">Primeros pasos</a></li>
+        <li><a href="recetas.html">Recetas integrales</a></li>
+        <li><a href="#acompanamiento">Acompañamiento</a></li>
+        <li><a href="#informacion">Información y derechos</a></li>
+        <li><a href="acerca.html">Acerca de y aviso de privacidad</a></li>
       </ul>
+      <h4 style="margin-top:1.5rem">Contacto</h4>
+      <p><a href="mailto:vientredeluzmx@gmail.com">vientredeluzmx@gmail.com</a></p>
     </div>
-
-    <div class="footer-base">
-      <p class="footer-legal" style="margin-bottom:1rem"><strong style="color:#C5D3C9">Aviso importante.</strong> Vientre de Luz no es una institución médica y no ofrece diagnósticos ni tratamientos. La información de este sitio tiene fines de orientación y concientización, y se apoya en las recomendaciones de la Organización Mundial de la Salud y en la legislación mexicana vigente. Ninguna decisión sobre la salud de tu hijo o hija debe tomarse sin un profesional de la salud que lo conozca.</p>
-      <p style="margin:0">© <span id="anio">2026</span> Vientre de Luz · vientredeluz.com · <a href="mailto:vientredeluzmx@gmail.com">vientredeluzmx@gmail.com</a></p>
-    </div>
+    <div class="pie-sello" aria-hidden="true">✦</div>
+  </div>
+  <div class="pie-base">
+    <span>© 2026 Vientre de Luz · Organización no gubernamental sin fines de lucro</span>
+    <span>Este sitio no ofrece diagnósticos ni tratamientos médicos.</span>
   </div>
 </footer>
 
 <script>
-  document.getElementById('anio').textContent = new Date().getFullYear();
-
-  // Menú móvil
-  var btn = document.getElementById('menu-btn');
-  var nav = document.getElementById('nav-principal');
-  function cerrar(){ nav.hidden = true; btn.setAttribute('aria-expanded','false'); }
-  function sincronizar(){
-    if (window.matchMedia('(max-width:900px)').matches) { cerrar(); }
-    else { nav.hidden = false; btn.setAttribute('aria-expanded','false'); }
-  }
-  btn.addEventListener('click', function(){
-    var abierto = nav.hidden === false;
-    nav.hidden = abierto;
-    btn.setAttribute('aria-expanded', String(!abierto));
+(function(){
+  var b=document.getElementById('navBoton'),m=document.getElementById('navMenu');
+  b.addEventListener('click',function(){
+    var abierto=m.classList.toggle('abierto');
+    b.setAttribute('aria-expanded',abierto?'true':'false');
   });
-  nav.addEventListener('click', function(e){
-    if (e.target.tagName === 'A' && window.matchMedia('(max-width:900px)').matches) cerrar();
+  m.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){m.classList.remove('abierto');b.setAttribute('aria-expanded','false');}
   });
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape' && nav.hidden === false && window.matchMedia('(max-width:900px)').matches) {
-      cerrar(); btn.focus();
-    }
-  });
-  window.addEventListener('resize', sincronizar);
-  sincronizar();
-
-  // Contacto por correo — provisional, hasta que el formulario se conecte a Formspree.
-  // Arma un mensaje legible y lo abre en la app de correo de quien escribe.
-  var formulario = document.getElementById('form-contacto');
-  var avisoForm = document.getElementById('form-aviso');
-  if (formulario && formulario.action.indexOf('mailto:') === 0) {
-    formulario.addEventListener('submit', function(e){
-      e.preventDefault();
-      var datos = new FormData(formulario);
-      var cuerpo = 'Nombre: ' + datos.get('nombre') + '\n'
-                 + 'Correo: ' + datos.get('email') + '\n'
-                 + 'Tema: ' + datos.get('tema') + '\n\n'
-                 + datos.get('mensaje') + '\n';
-      window.location.href = 'mailto:vientredeluzmx@gmail.com'
-        + '?subject=' + encodeURIComponent('Contacto desde el sitio — ' + datos.get('tema'))
-        + '&body=' + encodeURIComponent(cuerpo);
-      avisoForm.hidden = false;
-    });
-  }
+})();
 </script>
 
 </body>

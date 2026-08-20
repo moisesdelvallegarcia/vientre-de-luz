@@ -6,10 +6,19 @@ Sitio web de **Vientre de Luz**, ONG mexicana de concientización y acompañamie
 familias que viven con autismo. Sitio estático, sin build, sin dependencias.
 
 ```
-index.html    → todo el sitio (HTML + CSS + JS inline). Fuente única de verdad.
-README.md     → pendientes y criterios
-docs/         → marca, criterios de contenido y setup técnico
+index.html    → portada (los 6 pasos del diseño original)
+recetas.html  → recetas integrales
+acerca.html   → acerca de y aviso de privacidad
+styles.css    → hoja de estilo compartida por las tres páginas
+CNAME         → vientredeluz.com (GitHub Pages)
 ```
+
+El diseño replica el PDF de Canva original: bandas alternadas crema/verde bosque,
+etiquetas «PASO N», botones delgados en versalitas, pie verde profundo. La estructura
+de seis pasos se conservó tal cual; lo que cambió es el contenido de los pasos 4, 5 y 6.
+
+Las fotos y videos aún no están: en su lugar hay bloques `.marco` con una etiqueta que
+dice qué va ahí. Sustituir por `<img>` o `<iframe>` conforme lleguen los materiales.
 
 Se despliega con GitHub Pages desde `main` / root. Un `git push` publica.
 
@@ -81,7 +90,7 @@ Nunca "niño con autismo" como tragedia; nunca prometer resultados.
 
 - [ ] Sustituir el sello `✦` del header por el logo real en SVG
 - [ ] `favicon.ico` + `apple-touch-icon.png`
-- [ ] Conectar el formulario a Formspree (hoy es respaldo `mailto:`; ver README)
+- [ ] Conectar el formulario: crear cuenta en Formspree y reemplazar `TU-ID-AQUI`
 - [ ] Confirmar los enlaces de Instagram y Facebook
 - [ ] Fotografías propias (con permiso firmado de las familias)
 - [ ] Revisar anualmente los datos de "Dónde acudir" (verificados en agosto de 2026)
